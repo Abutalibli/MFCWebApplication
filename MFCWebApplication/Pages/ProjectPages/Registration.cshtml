@@ -1,0 +1,48 @@
+﻿@page
+@model MFCWebApplication.Pages.ProjectPages.RegistrationModel
+@{
+}
+
+<br>
+<h2>List of Registration</h2>
+<a class='btn btn-primary btn-sm' href='/ProjectPages/CreatRegistration'>New Adress</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>FIO</th>
+            <th>DateOfBirth</th>
+            <th>PlaceOfBirth</th>
+            <th>FamilyStatus</th>
+            <th>WhereDidComeFrom</th>
+            <th>Passport</th>
+            <th>PlaceOfDischarge</th>
+            <th>RegistrationDate</th>
+            <th>DateOfDischarge</th>
+            <th>idWorker</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.listRegistration)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.FIO</td>
+                <td>@item.DateOfBirth</td>
+                <td>@item.PlaceOfBirth</td>
+                <td>@item.FamilyStatus</td>
+                <td>@item.WhereDidComeFrom</td>
+                <td>@item.Passport</td>
+                <td>@item.PlaceOfDischarge</td>
+                <td>@item.RegistrationDate</td>
+                <td>@item.DateOfDischarge</td>
+                <td>@item.idWorker</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/ProjectPages/EditAdress?id=@item.id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/ProjectPages/DeleteAdress?id=@item.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

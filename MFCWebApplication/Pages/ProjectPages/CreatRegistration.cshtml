@@ -1,0 +1,100 @@
+﻿@page
+@model MFCWebApplication.Pages.ProjectPages.CreatRegistrationModel
+@{
+}
+
+<br>
+<h2>New Deals</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        <strong>@Model.errorMessage</strong>
+        <button type='button' class='btn-colse' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+}
+
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Fio</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="fio" value="@Model.registrationInfo.FIO">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">DateOfBirth</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="dateofbirth" value="@Model.registrationInfo.DateOfBirth">
+        </div>
+    </div>
+     <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">PlaceofBirth</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="placeofbirth" value="@Model.registrationInfo.PlaceOfBirth">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">FamilyStatus</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="familystatus" value="@Model.registrationInfo.FamilyStatus">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Wheredidcomefrom</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="wheredidcomefrom" value="@Model.registrationInfo.WhereDidComeFrom">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Passport</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="passport" value="@Model.registrationInfo.Passport">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">placeofdischarge</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="placeofdischarge" value="@Model.registrationInfo.PlaceOfDischarge">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Registrationdate</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="registrationdate" value="@Model.registrationInfo.RegistrationDate">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Dateofdischarge</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="dateofdischarge" value="@Model.registrationInfo.DateOfDischarge">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">IdWorker</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="idworker" value="@Model.registrationInfo.idWorker">
+        </div>
+    </div>
+
+    @if (Model.successMessage.Length > 0){
+    <div class="row mb-3">
+        <div class="col-sm-9">
+            <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                <strong>@Model.successMessage</strong>
+                <button type='button' class='btn-colse' data-bs-dismiss='alert' aria-label='Close'></button>
+            </div>
+        </div>
+    </div>
+    }
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Sumbit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/" role="button"> Cancel</a>
+
+        </div>
+
+    </div>
+</form>

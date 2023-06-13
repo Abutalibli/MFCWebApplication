@@ -1,0 +1,34 @@
+﻿@page
+@model MFCWebApplication.Pages.ProjectPages.PassportModel
+@{
+}
+
+<br>
+<h2>List of Passport</h2>
+<a class='btn btn-primary btn-sm' href='/ProjectPages/CreatePassport'>New Passport</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>TypeOfPassport</th>
+            <th>IssuedBy</th>
+            <th>PassNumber</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.listPassport)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.TypeOfPassport</td>
+                <td>@item.IssuedBy</td>
+                <td>@item.PassNumber</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/ProjectPages/EditPassport?id=@item.id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/ProjectPages/DeletePassport?id=@item.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

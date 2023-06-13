@@ -1,0 +1,37 @@
+﻿@page
+@model MFCWebApplication.Pages.ProjectPages.AdressModel
+@{
+}
+
+
+<br>
+<h2>List of Adress</h2>
+<a class='btn btn-primary btn-sm' href='/ProjectPages/CreateAdress'>New Adress</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>CityName</th>
+            <th>Street</th>
+            <th>HomeNumber</th>
+            <th>Apartment</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.listAdress)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.City</td>
+                <td>@item.Street</td>
+                <td>@item.HomeNumber</td>
+                <td>@item.Apartment</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/ProjectPages/EditAdress?id=@item.id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/ProjectPages/DeleteAdress?id=@item.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
