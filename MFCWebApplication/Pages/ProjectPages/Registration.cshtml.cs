@@ -24,17 +24,17 @@ namespace MFCWebApplication.Pages.ProjectPages
                             while (reader.Read())
                             {
                                 RegistrationInfo registrationInfo = new RegistrationInfo();
-                                registrationInfo.id = "" + reader.GetInt32(0);
+                                registrationInfo.id = reader.GetInt32(0).ToString();
                                 registrationInfo.FIO = reader.GetString(1);
                                 registrationInfo.DateOfBirth = reader.GetDateTime(2).ToString();
-                                registrationInfo.PlaceOfBirth = "" + reader.GetInt32(3);
+                                registrationInfo.PlaceOfBirth = reader.GetInt32(3).ToString();
                                 registrationInfo.FamilyStatus = reader.GetString(4);
-                                registrationInfo.WhereDidComeFrom = "" + reader.GetInt32(5);
-                                registrationInfo.Passport = "" + reader.GetInt32(6);
-                                registrationInfo.PlaceOfDischarge = "" + reader.GetInt32(7);
+                                registrationInfo.WhereDidComeFrom = reader.GetInt32(5).ToString();
+                                registrationInfo.Passport = reader.GetInt32(6).ToString();
+                                registrationInfo.PlaceOfDischarge = reader.GetInt32(7).ToString();
                                 registrationInfo.RegistrationDate = reader.GetDateTime(8).ToString();
                                 registrationInfo.DateOfDischarge = reader.GetDateTime(9).ToString();
-                                registrationInfo.idWorker = "" + reader.GetInt32(10);
+                                registrationInfo.idWorker = reader.GetInt32(10).ToString();
 
                                 listRegistration.Add(registrationInfo);
                             }

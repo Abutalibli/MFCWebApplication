@@ -1,0 +1,65 @@
+﻿@page
+@model MFCWebApplication.Pages.ProjectPages.CreateAdressModel
+@{
+}
+
+
+<br>
+<h2>New Adress</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        <strong>@Model.errorMessage</strong>
+        <button type='button' class='btn-colse' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+}
+
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">NameCity</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="namecity" value="@Model.adresslInfo.City">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">NameStreet</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="namestreet" value="@Model.adresslInfo.Street">
+        </div>
+    </div>
+     <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">HomeNumber</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="homenumber" value="@Model.adresslInfo.HomeNumber">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Apartment</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="apartment" value="@Model.adresslInfo.Apartment">
+        </div>
+    </div>
+
+    @if (Model.successMessage.Length > 0){
+    <div class="row mb-3">
+        <div class="col-sm-9">
+            <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                <strong>@Model.successMessage</strong>
+                <button type='button' class='btn-colse' data-bs-dismiss='alert' aria-label='Close'></button>
+            </div>
+        </div>
+    </div>
+    }
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Sumbit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/" role="button"> Cancel</a>
+
+        </div>
+
+    </div>
+</form>
